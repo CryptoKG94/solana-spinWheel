@@ -1,0 +1,74 @@
+.navbar {
+  /* background: linear-gradient(89.72deg, #041442 0.22%, #4e035f 99.75%); */
+  /* box-shadow: 0px 2px 24px rgba(88, 24, 127, 0.52); */
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  justify-content: space-between;
+}
+.logo img {
+  width: 125px;
+}
+.navbar .menu {
+  display: flex;
+  align-items: center;
+}
+.navbar .menu li {
+  display: inline-block;
+  padding: 0px 10px;
+}
+.navbar .menu li a {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  color: #fff;
+}
+
+/* Connect Metamsk */
+.connect_metamsk {
+  display: flex;
+  align-items: center;
+}
+.eth_mainnet_btn {
+  border: none;
+  padding: 6px 16px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  /* border-top-left-radius: 40% ;
+    border-bottom-left-radius: 50% ; */
+  background: rgba(209, 68, 249, 0.2);
+  color: #fff;
+  font-size: 14px;
+}
+.light {
+  font-size: 28px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.connect_metamsk_btn {
+  border: none;
+  padding: 12px 16px;
+  border-radius: 5px;
+  background: #d144f9;
+  color: #fff;
+  font-size: 16px;
+}
+
+.connect_metamsk_btn:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  .nav {
+    flex-direction: column;
+  }
+  .nav .connect_metamsk {
+    margin-top: 40px;
+  }
+}

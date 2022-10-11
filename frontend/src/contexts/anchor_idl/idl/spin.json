@@ -1,0 +1,825 @@
+{
+  "version": "0.1.0",
+  "name": "spin",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "initializer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "lastUsers",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "superAdmin",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "adminInfo",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "setPayInfo",
+      "accounts": [
+        {
+          "name": "admin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "adminInfo",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "dustMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "forgeMint",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "solPrice",
+          "type": "u64"
+        },
+        {
+          "name": "dustPrice",
+          "type": "u64"
+        },
+        {
+          "name": "forgePrice",
+          "type": "u64"
+        },
+        {
+          "name": "devFee",
+          "type": "u64"
+        },
+        {
+          "name": "devWallet",
+          "type": "publicKey"
+        },
+        {
+          "name": "isUsePaytoken",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "addItem",
+      "accounts": [
+        {
+          "name": "superadmin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "itemMintList",
+          "type": {
+            "array": [
+              "publicKey",
+              10
+            ]
+          }
+        },
+        {
+          "name": "count",
+          "type": "u8"
+        },
+        {
+          "name": "tokenType",
+          "type": "u8"
+        },
+        {
+          "name": "ratio",
+          "type": "u32"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "setItem",
+      "accounts": [
+        {
+          "name": "superadmin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "index",
+          "type": "u8"
+        },
+        {
+          "name": "itemMintList",
+          "type": {
+            "array": [
+              "publicKey",
+              10
+            ]
+          }
+        },
+        {
+          "name": "count",
+          "type": "u8"
+        },
+        {
+          "name": "tokenType",
+          "type": "u8"
+        },
+        {
+          "name": "ratio",
+          "type": "u32"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "itemCount",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "spinWheel",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "lastUsers",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userPendingstate",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "dustMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "dustVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "forgeMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "forgeVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sourceAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "devAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pythAccount",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "rand",
+          "type": "u32"
+        },
+        {
+          "name": "roundId",
+          "type": "u64"
+        },
+        {
+          "name": "payMode",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "claim",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userPendingstate",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sourceRewardAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destRewardAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "isSol",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "withdrawPaidTokens",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sourceAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "withdrawSol",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "vault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "closeUserPendingAcc",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "userPendingstate",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "addAdmin",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "adminInfo",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "deleteAdmin",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "adminInfo",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Pool",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "superadmin",
+            "type": "publicKey"
+          },
+          {
+            "name": "devWallet",
+            "type": "publicKey"
+          },
+          {
+            "name": "dustMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "forgeMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "solPrice",
+            "type": "u64"
+          },
+          {
+            "name": "dustPrice",
+            "type": "u64"
+          },
+          {
+            "name": "forgePrice",
+            "type": "u64"
+          },
+          {
+            "name": "devFee",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "isInitialized",
+            "type": "u8"
+          },
+          {
+            "name": "user",
+            "type": "publicKey"
+          },
+          {
+            "name": "roundNum",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserPendingClaimState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "user",
+            "type": "publicKey"
+          },
+          {
+            "name": "isClaimed",
+            "type": "u8"
+          },
+          {
+            "name": "roundNum",
+            "type": "u32"
+          },
+          {
+            "name": "pendingMintList",
+            "type": {
+              "array": [
+                "publicKey",
+                10
+              ]
+            }
+          },
+          {
+            "name": "pendingAmountList",
+            "type": {
+              "array": [
+                "u64",
+                10
+              ]
+            }
+          },
+          {
+            "name": "isClaimedList",
+            "type": {
+              "array": [
+                "bool",
+                10
+              ]
+            }
+          },
+          {
+            "name": "isSol",
+            "type": "bool"
+          },
+          {
+            "name": "solAmount",
+            "type": "u64"
+          },
+          {
+            "name": "count",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AdminInfo",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "adminList",
+            "type": {
+              "array": [
+                "publicKey",
+                15
+              ]
+            }
+          },
+          {
+            "name": "count",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SpinItemList",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "rewardMintList",
+            "type": {
+              "array": [
+                {
+                  "defined": "ItemRewardMints"
+                },
+                15
+              ]
+            }
+          },
+          {
+            "name": "tokenTypeList",
+            "type": {
+              "array": [
+                "u8",
+                15
+              ]
+            }
+          },
+          {
+            "name": "ratioList",
+            "type": {
+              "array": [
+                "u32",
+                15
+              ]
+            }
+          },
+          {
+            "name": "amountList",
+            "type": {
+              "array": [
+                "u64",
+                15
+              ]
+            }
+          },
+          {
+            "name": "lastSpinindex",
+            "type": "u8"
+          },
+          {
+            "name": "count",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LatestUsers",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "userList",
+            "type": {
+              "array": [
+                "publicKey",
+                10
+              ]
+            }
+          },
+          {
+            "name": "count",
+            "type": "u8"
+          },
+          {
+            "name": "payAmount",
+            "type": {
+              "array": [
+                "u64",
+                10
+              ]
+            }
+          },
+          {
+            "name": "rewardAmount",
+            "type": {
+              "array": [
+                "u64",
+                10
+              ]
+            }
+          },
+          {
+            "name": "rewardMint",
+            "type": {
+              "array": [
+                "publicKey",
+                10
+              ]
+            }
+          },
+          {
+            "name": "rewardType",
+            "type": {
+              "array": [
+                "u8",
+                10
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "ItemRewardMints",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "itemMintList",
+            "type": {
+              "array": [
+                "publicKey",
+                10
+              ]
+            }
+          },
+          {
+            "name": "count",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "CountOverflowAddItem",
+      "msg": "Count Overflow To Add Item"
+    },
+    {
+      "code": 6001,
+      "name": "IndexOverflowSetItem",
+      "msg": "Index Overflow To Set Item"
+    },
+    {
+      "code": 6002,
+      "name": "IncorrectUserState",
+      "msg": "Incorrect User State"
+    },
+    {
+      "code": 6003,
+      "name": "ClaimAmountError",
+      "msg": "Incorrect Claim Amount"
+    },
+    {
+      "code": 6004,
+      "name": "IncorrectSuperAdminOrAdmin",
+      "msg": "Incorrect SuperAdmin or Admin"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidReward",
+      "msg": "Invalid Reward"
+    },
+    {
+      "code": 6006,
+      "name": "IncorreectDustMintKey",
+      "msg": "Invalid Dust Mint Key"
+    },
+    {
+      "code": 6007,
+      "name": "IncorreectForgeMintKey",
+      "msg": "Invalid Forge Mint Key"
+    }
+  ],
+  "metadata": {
+    "address": "HHuEhMpSBPucPagawyqGwbM9PRJESbGCw2ZmcdrWs3UY"
+  }
+}

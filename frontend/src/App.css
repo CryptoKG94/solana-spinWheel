@@ -1,0 +1,19 @@
+body {
+  background-image: url(./assets/images/bg-top.png),
+    url(./assets/images/bg-bottom.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #090909;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-position: top left, bottom left;
+}
+
+iframe {
+  display: none !important;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+}

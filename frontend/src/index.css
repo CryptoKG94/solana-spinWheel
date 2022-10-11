@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background: linear-gradient(89.72deg, #041442 0.22%, #4e035f 99.75%); */
+  background-color: #090909;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-size: contain;
+  color: #fff;
+  /* font-family: "Roboto", sans-serif; */
+  width: 100%;
+  font-family: "Roboto Mono", monospace;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+.container {
+  width: 80%;
+  margin: 0px auto;
+}
+
+/* =========================
+        CSS Import
+   ========================== */
+
+@import url("./Components/Navbar//Navbar.css");
+@import url("./Components/Banner/Banner.css");
+@import url("./Components/Slider/Slider.css");
+@import url("./Components/Footer/Footer.css");
+
+.ReactModal__Overlay {
+  background: linear-gradient(89.72deg, #0414427b, #4e035f72);
+  /* background-color: red !important; */
+}
+
+.ReactModal__Content {
+  background: linear-gradient(
+    89.72deg,
+    #041442 0.22%,
+    #4e035f 99.75%
+  ) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.ReactModal__Content h2,
+.ReactModal__Content h3 {
+  text-align: center;
+  color: white !important;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}

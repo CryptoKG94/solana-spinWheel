@@ -1,0 +1,68 @@
+.admin-div {
+  display: flex;
+}
+
+.input-group label {
+  display: block;
+}
+
+.custom-input {
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 4px 20px;
+  display: block;
+  width: 100%;
+  text-indent: 6px;
+}
+
+.custom-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 40px;
+  width: 200px;
+  color: white;
+  border-radius: 4px;
+  display: block;
+}
+
+.remove-btn {
+  background-color: rgba(255, 39, 39, 0.659);
+}
+
+.withdraw-btn {
+  background-color: rgba(39, 194, 255, 0.659);
+}
+
+.admin {
+  width: 90%;
+  margin: auto;
+}
+
+.admin-flex {
+  width: 100%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.admin-header {
+  justify-content: flex-end;
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.add-btn {
+  align-self: flex-end;
+  width: 140px;
+  background-color: rgb(0, 158, 0);
+}
+
+.submit-btn {
+  width: 140px;
+  background-color: rgb(0, 158, 0);
+  margin-left: auto;
+}
